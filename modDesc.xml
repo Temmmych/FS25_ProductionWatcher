@@ -8,13 +8,41 @@
     </title>
 
     <description>
-        <en><![CDATA[Control Watcher]]></en>
-        <de><![CDATA[Control Watcher]]></de>
-        <fr><![CDATA[Control Watcher]]]></fr>
-        <es><![CDATA[Control Watcher]]]></es>
-        <ru><![CDATA[Control Watcher]]></ru>
-        <it><![CDATA[Control Watcher]]></it>
-        <pl><![CDATA[Control Watcher]]></pl>
+        <en><![CDATA[This mod informs about production status. If a production has less than 5% materials or storage is over 95% full, you'll see a notification.
+
+- Drag-n-drop feature
+- Supports singleplayer and multiplayer
+- In multiplayer, messages are available to the Farm Manager]]></en>
+        <de><![CDATA[Dieser Mod informiert über den Produktionsstatus. Wenn eine Produktion weniger als 5% Material hat oder der Lagerstand über 95% ist, erscheint eine Benachrichtigung.
+
+- Drag-n-drop-Funktion
+- Unerstützt Einzelspieler und Mehrspieler
+- Im Mehrspieler sind Nachrichten für den Farmleiter verfügbar]]></de>
+        <fr><![CDATA[Ce mod informe sur l'état de la production. Si une production a moins de 5% de matériaux ou si le stock est rempli à plus de 95%, vous verrez une notification.
+
+- Fonction glisser-déposer
+- Prend en charge le jeu solo et multijoueur
+- En multijoueur, les messages sont disponibles pour le Gérant de la ferme]]]></fr>
+        <es><![CDATA[Este mod informa sobre el estado de producción. Si una producción tiene menos del 5% de materiales o el almacén está lleno en más del 95%, verás una notificación.
+
+- Función arrastrar y soltar
+- Soporta un jugador y multijugador
+- En multijugador, los mensajes están disponibles para el Administrador de la granja]]]></es>
+        <ru><![CDATA[Мод информирует о состоянии на производствах. Если на производстве менее 5% материла или склад заполнен более 95%, вы увидите оповещение. 
+
+- Функция Drag-n-drop
+- Поддерживает одиночную игру и мультиплеер
+- В мультиплеере сообщения доступны Управляющему фермой]]></ru>
+        <it><![CDATA[Questo mod informa sullo stato della produzione. Se una produzione ha meno del 5% di materiali o il magazzino è pieno per più del 95%, vedrai una notifica.
+
+- Funzione drag-n-drop
+- Supporta giocatore singolo e multigiocatore
+- In multigiocatore, i messaggi sono disponibili per il Gestore della fattoria]]></it>
+        <pl><![CDATA[Ten mod informuje o stanie produkcji. Jeśli produkcja ma mniej niż 5% materiałów lub magazyn jest zapełniony w ponad 95%, zobaczysz powiadomienie.
+
+- Funkcja przeciągnij i upuść
+- Obsługuje tryb jedno- i wieloosobowy
+- W trybie wieloosobowym komunikaty są dostępne dla Zarządcy farmy]]></pl>
     </description>
 
     <multiplayer supported="true" />
