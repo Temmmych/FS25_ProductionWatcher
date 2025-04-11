@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="96">
+    <author>Temmmych</author>
+    <version>1.0.0.0</version>
+	
+    <title>
+        <en>Production Watcher</en>
+    </title>
+
+    <description>
+        <en><![CDATA[Control Watcher]]></en>
+        <de><![CDATA[Control Watcher]]></de>
+        <fr><![CDATA[Control Watcher]]]></fr>
+        <es><![CDATA[Control Watcher]]]></es>
+        <ru><![CDATA[Control Watcher]]></ru>
+        <it><![CDATA[Control Watcher]]></it>
+        <pl><![CDATA[Control Watcher]]></pl>
+    </description>
+
+    <multiplayer supported="true" />
+    <iconFilename>icon_production_watcher.dds</iconFilename>
+
+    <l10n>
+        <text name="message_matreials_5">
+            <en>materials &lt; 5%</en>
+            <de>material &lt; 5%</de>
+            <fr>matériaux &lt; 5%</fr>
+            <es>materiales &lt; 5%</es>
+            <ru>материлов &lt; 5%</ru>
+            <it>materiali &lt; 5%</it>
+            <pl>materiałów &lt; 5%</pl>
+        </text>
+        <text name="message_matreials_empty">
+            <en>no materials</en>
+            <de>kein Material</de>
+            <fr>pas de matériau</fr>
+            <es>sin material</es>
+            <ru>нет материлов</ru>
+            <it>nessun materiale</it>
+            <pl>brak materiałów</pl>
+        </text>
+        <text name="message_stock_95">
+            <en>in stock &gt; 95%</en>
+            <de>lager &gt; 95%</de>
+            <fr>en stock &gt; 95%</fr>
+            <es>en stock &gt; 95%</es>
+            <ru>на складе &gt; 95%</ru>
+            <it>in magazzino &gt; 95%</it>
+            <pl>w magazynie &gt; 95%</pl>
+        </text>
+        <text name="message_stock_full">
+            <en>warehouse full</en>
+            <de>lager voll</de>
+            <fr>stock plein</fr>
+            <es>almacén lleno</es>
+            <ru>склад полный</ru>
+            <it>magazzino pien</it>
+            <pl>magazyn pełny</pl>
+        </text>
+    </l10n>
+	
+    <extraSourceFiles>
+        <sourceFile filename="scripts/MessageWindow.lua"/>
+        <sourceFile filename="scripts/ProductionWatcher.lua"/>
+    </extraSourceFiles>
+</modDesc>
