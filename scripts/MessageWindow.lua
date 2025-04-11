@@ -45,10 +45,10 @@ function MessageWindow:addOrUpdateMessage(message)
         if msg.uniqueId == message.uniqueId then
             if msg.type == message.type then
                 upd = true
+                msg.text = message.text
                 msg.update = true
                 if msg.lastMessageId ~= message.messageId then
                     msg.lastMessageId = message.messageId
-                    msg.text = message.text
                     msg.show = true
                 end
             end 

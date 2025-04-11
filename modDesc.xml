@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="96">
+<modDesc descVersion="97">
     <author>Temmmych</author>
     <version>1.0.0.0</version>
 	
@@ -8,37 +8,37 @@
     </title>
 
     <description>
-        <en><![CDATA[This mod informs about production status. If a production has less than 5% materials or storage is over 95% full, you'll see a notification.
+        <en><![CDATA[This mod tracks the status of your active productions. It will notify you if a production has less than 5% materials remaining, its storage is over 95% full, and direct selling of finished goods is disabled.
 
 - Drag-n-drop feature
 - Supports singleplayer and multiplayer
 - In multiplayer, messages are available to the Farm Manager]]></en>
-        <de><![CDATA[Dieser Mod informiert über den Produktionsstatus. Wenn eine Produktion weniger als 5% Material hat oder der Lagerstand über 95% ist, erscheint eine Benachrichtigung.
+        <de><![CDATA[Diese Mod überwacht den Status Ihrer aktiven Produktionen. Sie erhalten eine Benachrichtigung, wenn weniger als 5% Material vorhanden ist, der Lagerstand über 95% liegt und der Direktverkauf von Fertigwaren deaktiviert ist.
 
 - Drag-n-drop-Funktion
 - Unerstützt Einzelspieler und Mehrspieler
 - Im Mehrspieler sind Nachrichten für den Farmleiter verfügbar]]></de>
-        <fr><![CDATA[Ce mod informe sur l'état de la production. Si une production a moins de 5% de matériaux ou si le stock est rempli à plus de 95%, vous verrez une notification.
+        <fr><![CDATA[Ce mod surveille l'état de vos productions actives. Il vous avertira si une production a moins de 5% de matières premières, si son stock est rempli à plus de 95% et si la vente directe des produits finis est désactivée.
 
 - Fonction glisser-déposer
 - Prend en charge le jeu solo et multijoueur
 - En multijoueur, les messages sont disponibles pour le Gérant de la ferme]]]></fr>
-        <es><![CDATA[Este mod informa sobre el estado de producción. Si una producción tiene menos del 5% de materiales o el almacén está lleno en más del 95%, verás una notificación.
+        <es><![CDATA[Este mod supervisa el estado de tus producciones activas. Te notificará si una producción tiene menos del 5% de materiales, su almacén está lleno en más del 95% y la venta directa de productos terminados está desactivada.
 
 - Función arrastrar y soltar
 - Soporta un jugador y multijugador
 - En multijugador, los mensajes están disponibles para el Administrador de la granja]]]></es>
-        <ru><![CDATA[Мод информирует о состоянии на производствах. Если на производстве менее 5% материла или склад заполнен более 95%, вы увидите оповещение. 
+        <ru><![CDATA[Мод информирует о заполненности на включенных производствах. Если на производстве менее 5% материла или склад заполнен более 95% и нет прямой продажи готовой продукции, Вы увидите оповещение.
 
 - Функция Drag-n-drop
 - Поддерживает одиночную игру и мультиплеер
 - В мультиплеере сообщения доступны Управляющему фермой]]></ru>
-        <it><![CDATA[Questo mod informa sullo stato della produzione. Se una produzione ha meno del 5% di materiali o il magazzino è pieno per più del 95%, vedrai una notifica.
+        <it><![CDATA[Questo mod monitora lo stato delle produzioni attive. Ti avviserà se una produzione ha meno del 5% di materiali, il magazzino è pieno per oltre il 95% e la vendita diretta dei prodotti finiti è disabilitata.
 
 - Funzione drag-n-drop
 - Supporta giocatore singolo e multigiocatore
 - In multigiocatore, i messaggi sono disponibili per il Gestore della fattoria]]></it>
-        <pl><![CDATA[Ten mod informuje o stanie produkcji. Jeśli produkcja ma mniej niż 5% materiałów lub magazyn jest zapełniony w ponad 95%, zobaczysz powiadomienie.
+        <pl><![CDATA[Ten mod śledzi status aktywnych produkcji. Powiadomi Cię, jeśli produkcja ma mniej niż 5% materiałów, magazyn jest zapełniony w ponad 95%, a bezpośrednia sprzedaż gotowych produktów jest wyłączona.
 
 - Funkcja przeciągnij i upuść
 - Obsługuje tryb jedno- i wieloosobowy
