@@ -4,9 +4,8 @@ This mod tracks the status of your active productions. It will notify you if a p
 
 ## 📦 Features
 
-- Drag-n-drop feature
 - Supports singleplayer and multiplayer
-- In multiplayer, messages are available to the Farm Manager
+- - Drag-n-drop feature
 
 ## 📁 Installation
 
