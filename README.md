@@ -19,5 +19,5 @@ This mod tracks the status of your active productions. It will notify you if a p
 ![Production Watcher](_screenshots/3.jpg)<br /><br />
 
 ## ✅ Cangelog
-# 1.0.0.1
+### 1.0.0.1
 - Notifications are visible to all farmers
