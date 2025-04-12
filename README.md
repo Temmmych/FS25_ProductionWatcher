@@ -5,7 +5,7 @@ This mod tracks the status of your active productions. It will notify you if a p
 ## 📦 Features
 
 - Supports singleplayer and multiplayer
-- - Drag-n-drop feature
+- Drag-n-drop feature
 
 ## 📁 Installation
 
