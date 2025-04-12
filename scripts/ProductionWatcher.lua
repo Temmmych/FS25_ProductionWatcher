@@ -31,9 +31,7 @@ function ProductionWatcher:check()
         for _, productionPoint in pairs(productionPoints) do
             if productionPoint.owningPlaceable.typeName == "productionPoint" or productionPoint.owningPlaceable.typeName == "greenhouse" then -- TODO лишнее
                 local ownerFarmId = productionPoint.ownerFarmId
-                if ownerFarmId ~= 0 and ownerFarmId == g_currentMission:getFarmId()
-                    and g_currentMission:getHasPlayerPermission(Farm.PERMISSION.EDIT_FARM, g_currentMission.player) then
-
+                if ownerFarmId ~= 0 and ownerFarmId == g_currentMission:getFarmId() then
                     local name = productionPoint.owningPlaceable:getName()
                     local uniqueId = productionPoint.owningPlaceable.uniqueId
 

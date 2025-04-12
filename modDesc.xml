@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <modDesc descVersion="97">
     <author>Temmmych</author>
-    <version>1.0.0.0</version>
+    <version>1.0.0.1</version>
 	
     <title>
         <en>Production Watcher</en>
@@ -10,39 +10,61 @@
     <description>
         <en><![CDATA[This mod tracks the status of your active productions. It will notify you if a production has less than 5% materials remaining, its storage is over 95% full, and direct selling of finished goods is disabled.
 
-- Drag-n-drop feature
 - Supports singleplayer and multiplayer
-- In multiplayer, messages are available to the Farm Manager]]></en>
+- Drag-n-drop feature
+
+Changelog:
+1.0.0.1:
+- Notifications are visible to all farmers]]></en>
         <de><![CDATA[Diese Mod überwacht den Status Ihrer aktiven Produktionen. Sie erhalten eine Benachrichtigung, wenn weniger als 5% Material vorhanden ist, der Lagerstand über 95% liegt und der Direktverkauf von Fertigwaren deaktiviert ist.
 
-- Drag-n-drop-Funktion
 - Unerstützt Einzelspieler und Mehrspieler
-- Im Mehrspieler sind Nachrichten für den Farmleiter verfügbar]]></de>
+- Drag-n-drop-Funktion
+
+Changelog:
+1.0.0.1:
+- Benachrichtigungen sind für alle Farmer sichtbar]]></de>
         <fr><![CDATA[Ce mod surveille l'état de vos productions actives. Il vous avertira si une production a moins de 5% de matières premières, si son stock est rempli à plus de 95% et si la vente directe des produits finis est désactivée.
 
-- Fonction glisser-déposer
 - Prend en charge le jeu solo et multijoueur
-- En multijoueur, les messages sont disponibles pour le Gérant de la ferme]]]></fr>
+- Fonction glisser-déposer
+
+Changelog:
+1.0.0.1:
+- Les notifications sont visibles par tous les fermiers]]></fr>
         <es><![CDATA[Este mod supervisa el estado de tus producciones activas. Te notificará si una producción tiene menos del 5% de materiales, su almacén está lleno en más del 95% y la venta directa de productos terminados está desactivada.
 
-- Función arrastrar y soltar
 - Soporta un jugador y multijugador
-- En multijugador, los mensajes están disponibles para el Administrador de la granja]]]></es>
+- Función arrastrar y soltar
+
+Changelog:
+1.0.0.1:
+- Las notificaciones son visibles para todos los granjeros
+]]></es>
         <ru><![CDATA[Мод информирует о заполненности на включенных производствах. Если на производстве менее 5% материла или склад заполнен более 95% и нет прямой продажи готовой продукции, Вы увидите оповещение.
 
-- Функция Drag-n-drop
 - Поддерживает одиночную игру и мультиплеер
-- В мультиплеере сообщения доступны Управляющему фермой]]></ru>
+- Функция Drag-n-drop
+
+Changelog:
+1.0.0.1:
+- Уведомления доступны всем фермерам]]></ru>
         <it><![CDATA[Questo mod monitora lo stato delle produzioni attive. Ti avviserà se una produzione ha meno del 5% di materiali, il magazzino è pieno per oltre il 95% e la vendita diretta dei prodotti finiti è disabilitata.
 
-- Funzione drag-n-drop
 - Supporta giocatore singolo e multigiocatore
-- In multigiocatore, i messaggi sono disponibili per il Gestore della fattoria]]></it>
+- Funzione drag-n-drop
+
+Changelog:
+1.0.0.1:
+- Le notifiche sono disponibili per tutti gli agricoltori]]></it>
         <pl><![CDATA[Ten mod śledzi status aktywnych produkcji. Powiadomi Cię, jeśli produkcja ma mniej niż 5% materiałów, magazyn jest zapełniony w ponad 95%, a bezpośrednia sprzedaż gotowych produktów jest wyłączona.
 
-- Funkcja przeciągnij i upuść
 - Obsługuje tryb jedno- i wieloosobowy
-- W trybie wieloosobowym komunikaty są dostępne dla Zarządcy farmy]]></pl>
+- Funkcja przeciągnij i upuść
+
+Changelog:
+1.0.0.1:
+- Powiadomienia są dostępne dla wszystkich rolników]]></pl>
     </description>
 
     <multiplayer supported="true" />
