@@ -1,76 +1,153 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
-<modDesc descVersion="97">
+<modDesc descVersion="99">
     <author>Temmmych</author>
-    <version>1.0.0.1</version>
+    <version>1.0.0.0</version>
 	
     <title>
         <en>Production Watcher</en>
     </title>
 
     <description>
-        <en><![CDATA[This mod tracks the status of your active productions. It will notify you if a production has less than 5% materials remaining, its storage is over 95% full, and direct selling of finished goods is disabled.
+        <en><![CDATA[This mod adds a notification system for production facilities.
 
-- Supports singleplayer and multiplayer
-- Drag-n-drop feature
+Alerts are triggered in the following cases:
+- Input materials drop below 5% or run out.
+- Output storage exceeds 95% or becomes full (with direct selling disabled).
 
-Changelog:
-1.0.0.1:
-- Notifications are visible to all farmers]]></en>
-        <de><![CDATA[Diese Mod überwacht den Status Ihrer aktiven Produktionen. Sie erhalten eine Benachrichtigung, wenn weniger als 5% Material vorhanden ist, der Lagerstand über 95% liegt und der Direktverkauf von Fertigwaren deaktiviert ist.
+Each production can send only one active notification for raw materials and one for output storage to avoid spam. Priority is always given to more critical alerts.
+This helps prevent production downtime or product loss.
 
-- Unerstützt Einzelspieler und Mehrspieler
-- Drag-n-drop-Funktion
+Default keys:
+- Hide/Show all notifications: Shift+Q
+- Cursor Hide/Show: MMB]]></en>
+        <de><![CDATA[Diese Mod fügt ein Benachrichtigungssystem für Produktionsgebäude hinzu.
 
-Changelog:
-1.0.0.1:
-- Benachrichtigungen sind für alle Farmer sichtbar]]></de>
-        <fr><![CDATA[Ce mod surveille l'état de vos productions actives. Il vous avertira si une production a moins de 5% de matières premières, si son stock est rempli à plus de 95% et si la vente directe des produits finis est désactivée.
+Benachrichtigungen werden in folgenden Fällen ausgelöst:
+-Rohstoffe fallen unter 5% oder gehen aus.
+-Das Lager ist zu mehr als 95% gefüllt oder vollständig voll (bei deaktiviertem Direktverkauf).
 
-- Prend en charge le jeu solo et multijoueur
-- Fonction glisser-déposer
+Jede Produktion kann nur eine aktive Benachrichtigung für Rohstoffe und eine für das Lager senden, um Spam zu vermeiden. Kritische Meldungen haben immer Priorität.
+So lassen sich Produktionsstopps oder Produktverluste vermeiden.
 
-Changelog:
-1.0.0.1:
-- Les notifications sont visibles par tous les fermiers]]></fr>
-        <es><![CDATA[Este mod supervisa el estado de tus producciones activas. Te notificará si una producción tiene menos del 5% de materiales, su almacén está lleno en más del 95% y la venta directa de productos terminados está desactivada.
+Standardtasten:
+- Alle Benachrichtigungen ein-/ausblenden: Shift+Q
+- Cursor Ausblenden/Einblenden: MMB]]></de>
+        <fr><![CDATA[Ce mod ajoute un système de notifications pour les sites de production.
 
-- Soporta un jugador y multijugador
-- Función arrastrar y soltar
+Des alertes sont déclenchées dans les cas suivants :
+- Les matières premières passent sous 5% ou sont épuisées.
+- Le stock de produits dépasse 95% ou est plein (vente directe désactivée).
 
-Changelog:
-1.0.0.1:
-- Las notificaciones son visibles para todos los granjeros
-]]></es>
-        <ru><![CDATA[Мод информирует о заполненности на включенных производствах. Если на производстве менее 5% материла или склад заполнен более 95% и нет прямой продажи готовой продукции, Вы увидите оповещение.
+Chaque production ne peut envoyer qu’une seule notification active pour les matières premières et une pour le stockage afin d’éviter le spam.
+Les alertes les plus critiques sont prioritaires. Cela permet d’éviter les arrêts de production ou la perte de produits.
 
-- Поддерживает одиночную игру и мультиплеер
-- Функция Drag-n-drop
+Touches par défaut:
+- Afficher/Masquer toutes les notifications: Shift+Q
+- Curseur Masquer/Afficher: MMB]]></fr>
+        <es><![CDATA[Este mod añade un sistema de notificaciones para las instalaciones de producción.
 
-Changelog:
-1.0.0.1:
-- Уведомления доступны всем фермерам]]></ru>
-        <it><![CDATA[Questo mod monitora lo stato delle produzioni attive. Ti avviserà se una produzione ha meno del 5% di materiali, il magazzino è pieno per oltre il 95% e la vendita diretta dei prodotti finiti è disabilitata.
+Las alertas se activan en los siguientes casos:
+- Los insumos bajan del 5% o se agotan.
+- El almacén de productos supera el 95% o está lleno (con venta directa desactivada).
 
-- Supporta giocatore singolo e multigiocatore
-- Funzione drag-n-drop
+Cada instalación puede enviar solo una notificación activa por materias primas y una por almacenamiento para evitar spam.
+Siempre se da prioridad a los avisos más críticos. Ayuda a evitar paros de producción o pérdida de productos.
 
-Changelog:
-1.0.0.1:
-- Le notifiche sono disponibili per tutti gli agricoltori]]></it>
-        <pl><![CDATA[Ten mod śledzi status aktywnych produkcji. Powiadomi Cię, jeśli produkcja ma mniej niż 5% materiałów, magazyn jest zapełniony w ponad 95%, a bezpośrednia sprzedaż gotowych produktów jest wyłączona.
+Teclas predeterminadas:
+- Mostrar/Ocultar todas las notificaciones: Shift+Q
+- Ocultar/Mostrar el Cursor: MMB]]></es>
+        <ru><![CDATA[Этот мод добавляет систему уведомлений для производственных объектов.
 
-- Obsługuje tryb jedno- i wieloosobowy
-- Funkcja przeciągnij i upuść
+Оповещения срабатывают в следующих случаях:
+- Входные материалы падают ниже 5% или заканчиваются.
+- Выходное хранилище достигает более 95% или заполняется (при отключенных прямых продажах).
 
-Changelog:
-1.0.0.1:
-- Powiadomienia są dostępne dla wszystkich rolników]]></pl>
+Каждое производство может отправить только одно активное оповещение по сырью и одно по складу, чтобы избежать спама. Приоритет всегда отдаётся более критичным сообщениям.
+Это помогает не упустить важные моменты в работе производств и избежать простоя или потери продукции.
+
+Клавиши по умолчанию:
+- Скрыть/Показать все уведомления: Shift+Q
+- Скрыть/Показать курсор: MMB]]></ru>
+        <it><![CDATA[Questa mod aggiunge un sistema di notifiche per gli impianti di produzione.
+
+Le notifiche si attivano nei seguenti casi:
+- Le scorte scendono sotto il 5% o si esauriscono.
+- Il magazzino supera il 95% o è pieno (con vendita diretta disattivata).
+
+Ogni produzione può inviare solo una notifica attiva per le materie prime e una per lo stoccaggio, per evitare spam.
+La priorità viene sempre data agli avvisi più critici. Aiuta a evitare interruzioni della produzione o perdite di prodotto.
+
+Tasti predefiniti:
+- Mostra/Nascondi tutte le notifiche: Shift+Q
+- Nascondi/Mostra il Cursore: MMB]]></it>
+        <pl><![CDATA[Mod dodaje system powiadomień dla zakładów produkcyjnych.
+
+Powiadomienia pojawiają się w następujących przypadkach:
+- Surowce spadają poniżej 5% lub się kończą.
+- Magazyn przekracza 95% pojemności lub jest pełny (przy wyłączonej sprzedaży bezpośredniej).
+
+Każda produkcja może wysłać tylko jedno aktywne powiadomienie o surowcach i jedno o magazynie, aby uniknąć spamu.
+Priorytet mają zawsze ważniejsze alerty. Pomaga to uniknąć przestojów i strat produkcyjnych.
+
+Domyślne klawisze:
+- Pokaż/Ukryj wszystkie powiadomienia: Shift+Q
+- Ukryj/Pokaż Kursor: MMB]]></pl>
     </description>
 
     <multiplayer supported="true" />
     <iconFilename>icon_production_watcher.dds</iconFilename>
 
+    <actions>
+		<action name="PRODUCTIONWATCHER_INPUT_ACTION_KEY" />
+        <action name="PRODUCTIONWATCHER_CURSOR_ACTION_KEY" />
+    </actions>
+
+    <inputBinding>
+        <actionBinding action="PRODUCTIONWATCHER_INPUT_ACTION_KEY">
+			<binding device="KB_MOUSE_DEFAULT" input="KEY_lshift KEY_q" axisComponent="+" neutralInput="0" index="1" />
+		</actionBinding>
+        <actionBinding action="PRODUCTIONWATCHER_CURSOR_ACTION_KEY">
+			<binding device="KB_MOUSE_DEFAULT" input="MOUSE_BUTTON_MIDDLE" axisComponent="+" neutralInput="0" index="3" />
+		</actionBinding>
+    </inputBinding>
+
     <l10n>
+        <text name="PRODUCTIONWATCHER_INPUT_ACTION_KEY">
+            <en>PW: Hide/Show</en>
+            <de>PW: Ausblenden/Einblenden</de>
+            <fr>PW: Masquer/Afficher</fr>
+            <es>PW: Ocultar/Mostrar</es>
+            <ru>PW: Скрыть/Показать</ru>
+            <it>PW: Nascondi/Mostra</it>
+            <pl>PW: Ukryj/Pokaż</pl>
+        </text>
+        <text name="input_PRODUCTIONWATCHER_INPUT_ACTION_KEY">
+            <en>Hide/Show notifications</en>
+            <de>Benachrichtigungen ausblenden/einblenden</de>
+            <fr>Masquer/Afficher les notifications</fr>
+            <es>Ocultar/Mostrar notificaciones</es>
+            <ru>Скрыть/Показать уведомления</ru>
+            <it>Nascondi/Mostra notifiche</it>
+            <pl>Ukryj/Pokaż powiadomienia</pl>
+        </text>
+        <text name="PRODUCTIONWATCHER_CURSOR_ACTION_KEY">
+            <en>PW: Cursor Hide/Show</en>
+            <de>PW: Cursor Ausblenden/Einblenden</de>
+            <fr>PW: Curseur Masquer/Afficher</fr>
+            <es>PW: Ocultar/Mostrar el Cursor</es>
+            <ru>PW: Скрыть/Показать курсор</ru>
+            <it>PW: Nascondi/Mostra il Cursore</it>
+            <pl>PW: Ukryj/Pokaż Kursor</pl>
+        </text>
+        <text name="input_PRODUCTIONWATCHER_CURSOR_ACTION_KEY">
+            <en>Cursor Hide/Show</en>
+            <de>Cursor Ausblenden/Einblenden</de>
+            <fr>Curseur Masquer/Afficher</fr>
+            <es>Ocultar/Mostrar el Cursor</es>
+            <ru>Скрыть/Показать курсор</ru>
+            <it>Nascondi/Mostra il Cursore</it>
+            <pl>Ukryj/Pokaż Kursor</pl>
+        </text>
         <text name="message_matreials_5">
             <en>materials &lt; 5%</en>
             <de>material &lt; 5%</de>

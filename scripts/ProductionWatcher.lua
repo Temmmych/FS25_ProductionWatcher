@@ -12,12 +12,12 @@ ProductionWatcher.camera_pitch, ProductionWatcher.camera_yaw, ProductionWatcher.
 local modName = g_currentModName
 local modDirectory = g_currentModDirectory
 local version = g_modManager:getModByName(modName).version
-local debug = 1
 local ProductionWatcher_mt = Class(ProductionWatcher)
 
 function ProductionWatcher.new()
     local self = setmetatable({}, ProductionWatcher_mt)
     self.messageWindow = MessageWindow.new()
+    self.messageVisibility = true
     self.lastVehicle = nil
     self.prductionNextCheck = 0
     self.productionCheckInterval = 3
@@ -34,46 +34,49 @@ function ProductionWatcher:check()
                 if ownerFarmId ~= 0 and ownerFarmId == g_currentMission:getFarmId() then
                     local name = productionPoint.owningPlaceable:getName()
                     local uniqueId = productionPoint.owningPlaceable.uniqueId
+                    local messageInputId = 0
+                    local messageOutputId = 0
 
                     for _, production in productionPoint.productions do
                         if production.status > 0 then
-
-                            local messageId = 0
                             for i, input in ipairs(production.inputs) do
                                 local fillLevel = productionPoint.storage:getFillLevel(input.type)
                                 local capacity = productionPoint.storage:getCapacity(input.type)
-                                if production.status == 2 then
-                                    messageId = 3
-                                elseif (fillLevel / capacity) * 100 < 5 then
-                                    if messageId < 1 then
-                                        messageId = 1
-                                    end
+                                local fillLveleToCapacity = (fillLevel / capacity) * 100
+                                if production.status == 2 or  fillLevel < input.amount then
+                                    messageInputId = 3
+                                elseif fillLveleToCapacity < 5 and messageInputId < 1 then
+                                    messageInputId = 1
                                 end
                             end
 
-                            if messageId > 0 then
-                                self.messageWindow:addOrUpdateMessage({text = name, uniqueId = uniqueId, type = "input", messageId = messageId})
-                            end
-
-                            messageId = 0
                             for i, output in ipairs(production.outputs) do
                                 local fillLevel = productionPoint.storage:getFillLevel(output.type)
                                 local capacity = productionPoint.storage:getCapacity(output.type)
-                                if not production.sellDirectly then
-                                    if production.status == 3 then
-                                        messageId = 4
-                                    elseif (fillLevel / capacity) * 100 > 95 then
-                                        if messageId < 2 then
-                                            messageId = 2
-                                        end
+                                local fillLveleToCapacity = (fillLevel / capacity) * 100
+								local distributionMode = 0
+								if productionPoint.getOutputDistributionMode ~= nil then
+									distributionMode = productionPoint:getOutputDistributionMode(output.type)
+								end
+                                local distributionMode = productionPoint:getOutputDistributionMode(output.type)
+                                if distributionMode ~= 1 and distributionMode ~= 2 then -- ProductionStorageControl has 3 for keep and 0 for spawn
+                                    if production.status == 3 or fillLveleToCapacity > 99.5 then
+                                        messageOutputId = 4
+                                    elseif fillLveleToCapacity > 95 and messageOutputId < 2 then
+                                        messageOutputId = 2
                                     end
                                 end
                             end
 
-                            if messageId > 0 then
-                                self.messageWindow:addOrUpdateMessage({text = name, uniqueId = uniqueId, type = "output", messageId = messageId})
-                            end
                         end
+                    end
+
+                    if messageInputId > 0 then
+                        self.messageWindow:addOrUpdateMessage({text = name, uniqueId = uniqueId, type = "input", messageId = messageInputId})
+                    end
+
+                    if messageOutputId > 0 then
+                        self.messageWindow:addOrUpdateMessage({text = name, uniqueId = uniqueId, type = "output", messageId = messageOutputId})
                     end
                 end
             end
@@ -95,13 +98,15 @@ function ProductionWatcher:loadMap(name)
     self.messageWindow.startX, self.messageWindow.startY = self:loadSettings()
 end
 
-function ProductionWatcher:mouseEvent(posX, posY, isDown, isUp, button)
-    if button == 2 and isDown then
-        self:SetMouseCursor(not ProductionWatcher.showMouseCursor)
-        return
-    end
 
-    if ProductionWatcher.showMouseCursor then
+function ProductionWatcher:toggleCursor()
+    self:SetMouseCursor(not ProductionWatcher.showMouseCursor)
+end
+
+function ProductionWatcher:mouseEvent(posX, posY, isDown, isUp, button)
+    if g_gui.currentGui ~= nil then return end
+
+    if ProductionWatcher.showMouseCursor or g_inputBinding:getShowMouseCursor() then -- g_inputBinding:getShowMouseCursor() from other mods
         self.messageWindow:mouseEvent(posX, posY, isDown, isUp, button)
     end
 end
@@ -110,12 +115,14 @@ function ProductionWatcher:SetMouseCursor(newSet)
     ProductionWatcher.showMouseCursor = newSet
     g_inputBinding:setShowMouseCursor(newSet)
     local vehicle = g_localPlayer:getCurrentVehicle()
+
     if vehicle ~= nil and vehicle.spec_enterable ~= nil and vehicle.spec_enterable.cameras ~= nil then
         for _, camera in pairs(vehicle.spec_enterable.cameras) do
             camera.isRotatable = not newSet
         end
     end
-    if newSet then
+    
+    if newSet or g_inputBinding:getShowMouseCursor() then -- g_inputBinding:getShowMouseCursor() from other mods
         if g_localPlayer.camera ~= nil then
             ProductionWatcher.camera_pitch, ProductionWatcher.camera_yaw, ProductionWatcher.camera_roll = g_localPlayer.camera:getRotation()
         end
@@ -124,10 +131,14 @@ function ProductionWatcher:SetMouseCursor(newSet)
     end
 end
 
-function ProductionWatcher:keyEvent(unicode, sym, modifier, isDown)
+function ProductionWatcher:toggleMessageVisibility()
+	self.messageVisibility = not self.messageWindow:issetVisibility()
+    self.messageWindow:toggleVisibility(self.messageVisibility)
 end
 
 function ProductionWatcher:update(dt)
+    if g_gui ~= nil and g_gui.currentGui ~= nil then return end
+    
     if g_currentMission.time > self.prductionNextCheck then
         self:check()
         self.prductionNextCheck = g_currentMission.time + self.productionCheckInterval * 1000
@@ -143,16 +154,20 @@ function ProductionWatcher:update(dt)
     if ProductionWatcher.camera_pitch ~= nil and g_localPlayer.camera ~= nil then
         g_localPlayer.camera:setRotation(ProductionWatcher.camera_pitch, ProductionWatcher.camera_yaw, ProductionWatcher.camera_roll)    
     end
+
+    local _, actionEventId = g_inputBinding:registerActionEvent('PRODUCTIONWATCHER_CURSOR_ACTION_KEY', self, ProductionWatcher.toggleCursor, false, true, false, true)
+    g_inputBinding:setActionEventText(actionEventId, g_i18n:getText("PRODUCTIONWATCHER_CURSOR_ACTION_KEY")) --
+	g_inputBinding:setActionEventTextPriority(actionEventId, GS_PRIO_VERY_LOW) -- 
+    g_inputBinding:setActionEventTextVisibility(actionEventId, false)
+
+    local _, actionEventId = g_inputBinding:registerActionEvent('PRODUCTIONWATCHER_INPUT_ACTION_KEY', self, ProductionWatcher.toggleMessageVisibility, false, true, false, true)
+    g_inputBinding:setActionEventText(actionEventId, g_i18n:getText("PRODUCTIONWATCHER_INPUT_ACTION_KEY")) --
+	g_inputBinding:setActionEventTextPriority(actionEventId, GS_PRIO_VERY_LOW) -- 
+    g_inputBinding:setActionEventTextVisibility(actionEventId, false)
 end
 
 function ProductionWatcher:draw()
     self.messageWindow:draw()
-end
-
-function ProductionWatcher:updateTick(dt)
-end
-
-function ProductionWatcher:deleteMap()
 end
 
 function ProductionWatcher:getSettingsFilePath()
@@ -177,7 +192,7 @@ function ProductionWatcher:loadSettings()
         local xmlFile = loadXMLFile("settings", path)
         posX = getXMLFloat(xmlFile, "Settings#posX") or posX
         posY = getXMLFloat(xmlFile, "Settings#posY") or posY
-        delete(xmlFile) 
+        delete(xmlFile)
     end
     return posX, posY
 end

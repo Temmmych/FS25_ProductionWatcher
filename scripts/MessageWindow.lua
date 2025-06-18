@@ -19,21 +19,24 @@ local infoMessages = {
 function MessageWindow.new()
     local self = setmetatable({}, MessageWindow_mt)
     self.messages = {}
-    self.maxMessageLenght = 23
+    self.maxMessageLenght = 29
     self.startX = 0.186354
     self.startY = 0.953703
+    self.dragging = false
+    self.dragOffsetX = 0
+    self.dragOffsetY = 0
+    return self
+end
+
+function MessageWindow:setScale()
     self.uiScale = g_gameSettings:getValue('uiScale')
-    self.fontSize = self.uiScale * 0.014
+    self.fontSize = self.uiScale * 0.011
     self.textHeight = getTextHeight(self.fontSize, "Text")
     self.paddingX = self.uiScale * 0.003
     self.paddingY = self.uiScale * 0.0052
     self.spacing = self.uiScale * 0.005
     self.bgWidth = self.uiScale * 0.2
     self.bgHeight = self.textHeight + 0.0065
-    self.dragging = false
-    self.dragOffsetX = 0
-    self.dragOffsetY = 0
-    return self
 end
 
 function MessageWindow:addOrUpdateMessage(message)
@@ -42,16 +45,14 @@ function MessageWindow:addOrUpdateMessage(message)
     message.text = self:subStr(message.text, self.maxMessageLenght)
     message.text =  utf8ToUpper(message.text  .. ": " .. l10n)
     for i, msg in ipairs(self.messages) do
-        if msg.uniqueId == message.uniqueId then
-            if msg.type == message.type then
-                upd = true
-                msg.text = message.text
-                msg.update = true
-                if msg.lastMessageId ~= message.messageId then
-                    msg.lastMessageId = message.messageId
-                    msg.show = true
-                end
-            end 
+        if msg.uniqueId == message.uniqueId and msg.type == message.type then
+            upd = true
+            msg.text = message.text
+            msg.update = true
+            if msg.lastMessageId ~= message.messageId then
+                msg.lastMessageId = message.messageId
+                msg.show = true
+            end
             break
         end
     end
@@ -74,10 +75,28 @@ function MessageWindow:deleteMessages()
     end
 end
 
+function MessageWindow:toggleVisibility(visibility)
+    for _, msg in ipairs(self.messages) do
+        msg.show = visibility
+    end
+end
+
+function MessageWindow:issetVisibility()
+    for _, msg in ipairs(self.messages) do
+        if msg.show == true then
+            return true
+        end
+    end
+    return false
+end
+
 function MessageWindow:draw()
     if not g_currentMission.hud.isVisible then return end
     if next(self.messages) == nil then return end
+
+    self:setScale()
     local counter = 0
+
     for i, msg in ipairs(self.messages) do
         if msg.show then
             msg.bgX = self.startX
@@ -97,8 +116,7 @@ function MessageWindow:draw()
 
             setOverlayColor(bgOverlay, 0, 0, 0, 0.65)
             renderOverlay(bgOverlay, msg.bgX, msg.bgY, self.bgWidth, self.bgHeight)
-
-            setTextBold(false)
+            setTextBold(true)
             setTextColor(1, 1, 1, 1)
             renderText(textX, textY, self.fontSize, msg.text)
 
@@ -116,7 +134,6 @@ end
 
 function MessageWindow:mouseEvent(posX, posY, isDown, isUp, button)
     if next(self.messages) == nil then return end
-    if g_gui.currentGui ~= nil then return end
 
     if button == 1 then
         if isDown then
@@ -158,5 +175,5 @@ end
 
 function MessageWindow:subStr(str, length)
     if string.len(str) <= length then return str end
-    return utf8Substr(str, 0, length) .. "..."
+    return utf8Substr(str, 0, length) -- .. "..."
 end
