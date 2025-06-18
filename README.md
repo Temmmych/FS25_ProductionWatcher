@@ -16,5 +16,5 @@ This mod tracks the status of your active productions. It will notify you if a p
 ## 🖼️ Screenshots
 ![Production Watcher](_screenshots/1.jpg)<br />
 ![Production Watcher](_screenshots/2.jpg)<br />
-![Production Watcher](_screenshots/3.jpg)<br /><br />
-
+![Production Watcher](_screenshots/3.jpg)<br />
+![Production Watcher](_screenshots/4.jpg)<br /><br />
